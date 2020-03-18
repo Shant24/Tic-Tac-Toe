@@ -23,9 +23,9 @@ const check = color => {
 
   if (winner) {
     if (turn == true) {
-      alert("Winner - '\u2715'");
+      alert("Winner - \u2715");
     } else {
-      alert("Winner - '\u25EF'");
+      alert("Winner - \u25EF");
     }
 
     document.getElementById("field").removeEventListener("click", press);
