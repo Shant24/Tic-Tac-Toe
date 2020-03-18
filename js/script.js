@@ -1,64 +1,3 @@
-// let turn = true;
-// let esim = [];
-// const square1 = document.getElementById("square1");
-// const square2 = document.getElementById("square2");
-
-// square1.addEventListener("click", (e) => {
-//     if(esim[0] === false) {
-//         esim[0] = true;
-//         // e.currentTarget.innerHTML = "x";
-//         e.currentTarget.className = "square selectedX";
-//     } else {
-//         esim[0] = false;
-//         // e.currentTarget.innerHTML = "o";
-//         e.currentTarget.className = "square selectedO";
-//     }
-// });
-
-// square2.addEventListener("click", (e) => {
-//     if(esim[1] === false) {
-//         esim[1] = true;
-//         // e.currentTarget.innerHTML = "x";
-//         e.currentTarget.className = "square selectedX";
-//     } else {
-//         esim[1] = false;
-//         // e.currentTarget.innerHTML = "o";
-//         e.currentTarget.className = "square selectedO";
-//     }
-// });
-
-// square1.addEventListener("click", (e) => {
-//     if (esim[0] !== undefined) {
-//         return;
-//     }
-//     if(turn) {
-//         // e.currentTarget.innerHTML = "x";
-//         e.currentTarget.className = "square selectedX";
-//     } else {
-//         // e.currentTarget.innerHTML = "o";
-//         e.currentTarget.className = "square selectedO";
-//     }
-//     esim[0] = true;
-//     changeTurn();
-// });
-
-// square2.addEventListener("click", (e) => {
-//     if (esim[1] !== undefined) {
-//         return;
-//     }
-//     if(turn) {
-//         // e.currentTarget.innerHTML = "x";
-//         e.currentTarget.className = "square selectedX";
-//     } else {
-//         // e.currentTarget.innerHTML = "o";
-//         e.currentTarget.className = "square selectedO";
-//     }
-//     esim[1] = true;
-//     changeTurn();
-// });
-
-// changeTurn = () => (turn = !turn);
-
 let turn = true;
 let steps = [];
 
@@ -84,13 +23,9 @@ const check = color => {
 
   if (winner) {
     if (turn == true) {
-      winner[]
-      // color.dataset.number.className = "selected selectedX winner";
-      // alert("Winner X");
+      alert("Winner - &#10005");
     } else {
-
-      // color.target.className = "selected selectedY winner"
-      // alert("Winner O");
+      alert("Winner - &#9711;");
     }
 
     document.getElementById("field").removeEventListener("click", press);
