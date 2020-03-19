@@ -1,15 +1,29 @@
-body {
-  width: 100vw;
-  height: 100vh;
+@font-face {
+  font-family: 'Automania';
+  src: url('../fonts/AUTOMANI.TTF') format('truetype');
+  font-style: normal;
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Clip';
+  src: url('../fonts/Clip.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 200;
+}
+
+.bodyDiv {
   background-image: url(../img/bg.jpg);
   background-size: 100% 100%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .row {
-  margin: 0 5vw;
+  margin: 0 3vw;
   min-width: 237px;
   max-width: 237px;
   display: flex;
@@ -37,7 +51,6 @@ body {
   font-size: 48px;
   line-height: 75px;
   content: "\2715";
-  /* color: #ffd8d8; */
   color: #82b2db;
   text-shadow: 0 0 5px #2196f3, 0 0 10px #2196f3, 0 0 15px #2196f3;
 }
@@ -46,34 +59,21 @@ body {
   font-size: 90px;
   line-height: 65px;
   content: "\25CB";
-  /* color: rgb(255, 0, 0); */
-  /* color: #ffd8d8; */
   color: #3ed377;
   text-shadow: 0 0 5px #4ef063, 0 0 10px #4ef063, 0 0 15px #4ef063;
 }
 
 .players {
-  min-width: 310px;
-  height: 200px;
-  color: white;
-  font-size: 65px;
+  min-width: 296px;
+  height: 220px;
+  font-size: 80px;
   text-align: center;
-  display: block;
-  text-shadow: 0 0 1.1vw #ffd8d8, 0 0 1.1vw #ffd8d8, 0 0vw 1.1vw #ffd8d8,
-    0.1vw 0vw 1vw #e73f3f, 0.2vw 0vw 1vw #e73f3f, 0.4vw 0vw 5vw #e73f3f,
-    0.1vw 0vw 5vw #e73f3f, 0.2vw 0vw 20vw #e73f3f, 0.4vw 0vw 10vw #e73f3f;
-}
-
-.xWinner {
-  display: none;
-}
-
-.oWinner {
-  display: none;
+  font-family: "Clip", "Automania";
+  font-weight: lighter;
 }
 
 div h1 .O {
-  font-size: 60px;
+  font-size: 75px;
 }
 
 .playerX {
@@ -87,7 +87,21 @@ div h1 .O {
   text-shadow: 0 0 5px #4ef063, 0 0 10px #4ef063, 0 0 15px #4ef063;
 }
 
-.winner {
-  color: #e24b4b;
-  text-shadow: 0 0 5px #e73f3f;
+.winner::after {
+  color: #db8282;
+  text-shadow: 0 0 5px #f32121, 0 0 10px #f32121, 0 0 15px #f32121;
+}
+
+.xWin {
+  font-size: 100px;
+  margin-top: 50px;
+  color: #db8282;
+  text-shadow: 0 0 5px #f32121, 0 0 10px #f32121, 0 0 15px #f32121;
+}
+
+.oWin {
+  font-size: 80px;
+  margin-top: 70px;
+  color: #cbdb82;
+  text-shadow: 0 0 5px #d4f321, 0 0 10px #d4f321, 0 0 15px #d4f321;
 }

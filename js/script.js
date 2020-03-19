@@ -1,6 +1,8 @@
 let turn = true;
 let steps = [];
 
+const field = document.getElementById("field");
+
 const answers = [
   [0, 1, 2],
   [3, 4, 5],
@@ -12,24 +14,48 @@ const answers = [
   [2, 5, 8]
 ];
 
-const check = color => {
-  const winner = answers.some(kombinacia => {
-    return (
-    steps[kombinacia[0]] !== undefined &&
-    steps[kombinacia[0]] === steps[kombinacia[1]] &&
-    steps[kombinacia[1]] === steps[kombinacia[2]]
-  );
-  });
+function xWinner() {
+  document.getElementById("forX1").innerHTML = "Winner";
+  document.getElementById("forO2").innerHTML = "Loser";
+}
+function oWinner() {
+  document.getElementById("forO1").innerHTML = "Winner";
+  document.getElementById("forX2").innerHTML = "Loser";
+}
 
-  if (winner) {
-    if (turn == true) {
-      alert("Winner - \u2715");
-    } else {
-      alert("Winner - \u25EF");
+const check = () => {
+  const finished = answers.some(combination => {
+    debugger;
+    const hasWinner =
+      steps[combination[0]] !== undefined &&
+      steps[combination[0]] === steps[combination[1]] &&
+      steps[combination[1]] === steps[combination[2]];
+
+    if (hasWinner) {
+      markTheWinner(combination);
     }
 
-    document.getElementById("field").removeEventListener("click", press);
+    return hasWinner;
+  });
+
+  if (finished) {
+    if (turn == true) {
+      xWinner();
+    } else {
+      oWinner();
+    }
+
+    field.removeEventListener("click", press);
   }
+};
+
+markTheWinner = combinationForChangeColor => {
+  [...field.children].forEach(cell => {
+    if (combinationForChangeColor.includes(Number(cell.dataset.number))) {
+      cell.classList.add("winner");
+      // cell.style.color = "#FF0000";
+    }
+  });
 };
 
 press = e => {
@@ -49,4 +75,4 @@ press = e => {
   turn = !turn;
 };
 
-document.getElementById("field").addEventListener("click", press);
+field.addEventListener("click", press);
